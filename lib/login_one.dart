@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_sample_project/mobile_number_verification.dart';
 
 class SignInOne extends StatelessWidget {
   @override
@@ -120,7 +121,12 @@ class SignInOne extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 20),
                     child: MaterialButton(
-                      onPressed: () {}, //since this is only a UI app
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MobileNumberVerification()),
+                          );                 
+                      }, //since this is only a UI app
                       child: Text(
                         'LOGIN',
                         style: TextStyle(
