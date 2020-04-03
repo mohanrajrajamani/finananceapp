@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_sample_project/dashboard_page.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import 'dashboard_page.dart';
 
 class OtpverificationPage extends StatefulWidget {
   @override

@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
-import 'package:my_sample_project/speciality.dart';
+import 'package:my_sample_project/model/speciality.dart';
+
 
 List<SpecialityModel> getSpeciality(){
 

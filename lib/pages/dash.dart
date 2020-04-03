@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_sample_project/speciality.dart';
+import 'package:my_sample_project/model/data.dart';
+import 'package:my_sample_project/model/speciality.dart';
 
-import 'data.dart';
 
 String selectedCategorie= "Adults";
 

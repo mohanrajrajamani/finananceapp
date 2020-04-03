@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_sample_project/mobile_number_verification.dart';
+
+import 'mobile_number_verification.dart';
+
+
 
 class SignInOne extends StatelessWidget {
   @override

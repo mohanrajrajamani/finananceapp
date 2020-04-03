@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_sample_project/otp_verification_page.dart';
+
+import 'otp_verification_page.dart';
+
 
 class MobileNumberVerification extends StatefulWidget {
   @override

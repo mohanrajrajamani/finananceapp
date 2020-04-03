@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_sample_project/data.dart';
-import 'package:my_sample_project/speciality.dart';
+import 'package:my_sample_project/model/data.dart';
+import 'package:my_sample_project/model/speciality.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
