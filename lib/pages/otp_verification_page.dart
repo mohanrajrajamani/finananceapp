@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_sample_project/pages/navigationpage.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
-import 'dashboard_page.dart';
 
 class OtpverificationPage extends StatefulWidget {
   @override
@@ -85,7 +84,7 @@ class OtpverificationPageState extends State {
                     onPressed: () {
                       Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => DashboardPage()),
+                            MaterialPageRoute(builder: (context) => NavigationPage()),
                           );         
                        
                     }, //since this is only a UI app

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'mobile_number_verification.dart';
-
+import 'package:my_sample_project/pages/mobile_number_verification.dart';
 
 
 class SignInOne extends StatelessWidget {

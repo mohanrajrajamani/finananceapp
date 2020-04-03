@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:my_sample_project/model/data.dart';
 import 'package:my_sample_project/model/speciality.dart';
-import 'package:page_view_indicators/circle_page_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 String selectedCategorie = "Adults";
 
-class HomePage extends StatefulWidget {
+class DashboardPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _DashboardPageState createState() => _DashboardPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardPageState extends State<DashboardPage> {
   List<Widget> items = [
     buildPage("0", Colors.red),
     buildPage("1", Colors.blue),

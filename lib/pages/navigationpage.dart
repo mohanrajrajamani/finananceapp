@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_sample_project/pages/accountpage.dart';
+import 'package:my_sample_project/pages/dashboardpage.dart';
 
 
-import 'dash.dart';
-import 'homepage.dart';
-
-class DashboardPage extends StatefulWidget {
+class NavigationPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => DashboardPageState();
+  State<StatefulWidget> createState() => NavigationPageState();
 }
 
-class DashboardPageState extends State {
+class NavigationPageState extends State {
   int _selectedTabIndex = 0;
   List _pages = [
     Text("Home"),
@@ -34,14 +33,14 @@ class DashboardPageState extends State {
             offstage: _selectedTabIndex != 0,
             child: new TickerMode(
               enabled: _selectedTabIndex == 0,
-              child: new MaterialApp(home: new DashboardTab()),
+              child: new MaterialApp(home: new DashboardPage()),
             ),
           ),
           new Offstage(
             offstage: _selectedTabIndex != 1,
             child: new TickerMode(
               enabled: _selectedTabIndex == 1,
-              child: new MaterialApp(home: new HomePage()),
+              child: new MaterialApp(home: new Accountpage()),
             ),
           ),
         ],

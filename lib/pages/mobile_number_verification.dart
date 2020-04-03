@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'otp_verification_page.dart';
+import 'package:my_sample_project/pages/otp_verification_page.dart';
 
 
 class MobileNumberVerification extends StatefulWidget {
