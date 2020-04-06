@@ -8,6 +8,17 @@ class Accountpage extends StatefulWidget {
 
 class AccountPageState extends State {
   int _groupValue = 1;
+  List<String> bankDetails = new List<String>();
+
+  @override
+  initState() {
+    super.initState();
+    bankDetails = new List<String>();
+
+    bankDetails.add('Bank Account');
+    bankDetails.add('Credit Card Account');
+  
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +37,7 @@ class AccountPageState extends State {
       ),
       body: new Container(
         child: ListView.builder(
-            itemCount: 2,
+            itemCount: bankDetails.length,
             scrollDirection: Axis.vertical,
             itemBuilder: (context, position) {
               return GestureDetector(
@@ -46,7 +57,7 @@ class AccountPageState extends State {
                       children: <Widget>[
                         new Container(
                           padding: EdgeInsets.fromLTRB(24, 10, 24, 0),
-                          child: Text("Bank Account",
+                          child: Text(bankDetails[position],
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: "Proxima",

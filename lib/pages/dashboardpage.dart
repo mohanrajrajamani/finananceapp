@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_sample_project/model/data.dart';
 import 'package:my_sample_project/model/speciality.dart';
+import 'package:page_view_indicators/circle_page_indicator.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 String selectedCategorie = "Adults";
@@ -22,7 +23,7 @@ class _DashboardPageState extends State<DashboardPage> {
     buildPage("7", Colors.brown)
   ];
   List<String> categories = ["Adults", "Childrens", "Womens", "Mens"];
-  PageController _controller = PageController(viewportFraction: 0.8);
+  //PageController _controller = PageController(viewportFraction: 0.8);
   List<SpecialityModel> specialities;
 
   var dropdownValue = 'test';
@@ -33,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void initState() {
     super.initState();
-    _controller = PageController();
+    //_controller = PageController();
     specialities = getSpeciality();
   }
 
@@ -41,7 +42,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(10.0), // here the desired height
+            preferredSize: Size.fromHeight(0.0), // here the desired height
             child: AppBar(
               elevation: 0.0,
             )),
@@ -111,52 +112,91 @@ class _DashboardPageState extends State<DashboardPage> {
                           ],
                         ),
                         Container(
-                          height: 200,
+                          height: 180,
                           child: SizedBox(
-                            height: 200,
+                            height: 180,
                             child: Column(
                               children: <Widget>[
                                 Expanded(
-                                  child: PageView(
-                                    onPageChanged: (int index) {
+                                  child: PageView.builder(
+                                     onPageChanged: (int index) {
                                       _currentPageNotifier.value = index;
                                     },
+                                     controller: PageController(viewportFraction: 0.9),
+                                    itemCount: 2,
                                     physics: ClampingScrollPhysics(),
-                                    controller: _controller,
-                                    children: <Widget>[
-                                      ListView.builder(
-                                          itemCount: specialities.length,
-                                          //shrinkWrap: true,
-                                          // physics: ClampingScrollPhysics(),
-                                          scrollDirection: Axis.horizontal,
-                                          itemBuilder: (context, index) {
-                                            //  _currentPageNotifier.value = index-1;
+                                  //  controller: _controller,
+                                    scrollDirection: Axis.horizontal,
+
+
+                                    itemBuilder: (context, i) {
+
 
                                             return SpecialistTile(
-                                              imgAssetPath: specialities[index]
+                                              imgAssetPath: specialities[i]
                                                   .imgAssetPath,
-                                              speciality: specialities[index]
+                                              speciality: specialities[i]
                                                   .speciality,
-                                              noOfDoctors: specialities[index]
+                                              noOfDoctors: specialities[i]
                                                   .noOfDoctors,
-                                              backColor: specialities[index]
+                                              backColor: specialities[i]
                                                   .backgroundColor,
                                             );
-                                          }),
-                                    ],
+                                      //     }),
+
+
+
+
+
+                                    }
+
+
+
+
+
+
+                                 //   children: <Widget>[
+
+
+
+
+
+
+                                      // ListView.builder(
+                                      //     itemCount: specialities.length,
+                                      //     //shrinkWrap: true,
+                                      //   //  physics: ClampingScrollPhysics(),
+                                      //     scrollDirection: Axis.horizontal,
+                                      //     itemBuilder: (context, index) {
+                                      //       //  _currentPageNotifier.value = index-1;
+
+                                      //       return SpecialistTile(
+                                      //         imgAssetPath: specialities[index]
+                                      //             .imgAssetPath,
+                                      //         speciality: specialities[index]
+                                      //             .speciality,
+                                      //         noOfDoctors: specialities[index]
+                                      //             .noOfDoctors,
+                                      //         backColor: specialities[index]
+                                      //             .backgroundColor,
+                                      //       );
+                                      //     }),
+                                    //],
 
                                     // children: items,
                                     // controller: _controller,
                                   ),
+                                  
                                 ),
-                                // CirclePageIndicator(
-                                //   selectedDotColor: Colors.green,
-                                //   itemCount: specialities.length,
-                                //   currentPageNotifier: _currentPageNotifier,
-                                // )
+                                CirclePageIndicator(
+                                  selectedDotColor: Colors.blue,
+                                  itemCount: specialities.length,
+                                  currentPageNotifier: _currentPageNotifier,
+                                )
                               ],
                             ),
                           ),
+                          
                         ),
                         new Container(
                             margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -785,12 +825,12 @@ class SpecialistTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 320,
-      margin: EdgeInsets.fromLTRB(12, 0, 12, 12),
+      //width: 280,
+    
       decoration: BoxDecoration(
         image: new DecorationImage(
           image: new ExactAssetImage(imgAssetPath),
-          fit: BoxFit.none,
+          fit: BoxFit.fill,
         ),
       ),
       padding: EdgeInsets.only(top: 30, right: 16, left: 16, bottom: 40),

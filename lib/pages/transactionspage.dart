@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_sample_project/tab/allcatagorizedpage.dart';
+import 'package:my_sample_project/tab/catagorizedpage.dart';
+import 'package:my_sample_project/tab/uncatagorizedpage.dart';
 
 
 class TransactionsPage extends StatefulWidget {
@@ -57,8 +59,8 @@ class TransactionsPageState extends State with SingleTickerProviderStateMixin{
       body: TabBarView(
           children: [
         AllCatagorizedPage(),
-        new Text("This is chat Tab View"),
-        new Text("This is notification Tab View"),
+       UncatagorizedPage(),
+       Catagorizedpage(),
       ],
       controller: _tabController,),
     );
