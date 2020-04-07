@@ -7,11 +7,18 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 String selectedCategorie = "Adults";
 
 class DashboardPage extends StatefulWidget {
+   final Function function;
+
+  DashboardPage({Key key, this.function}) : super(key: key);
+
+
   @override
   _DashboardPageState createState() => _DashboardPageState();
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+ 
+
   List<Widget> items = [
     buildPage("0", Colors.red),
     buildPage("1", Colors.blue),
@@ -119,48 +126,30 @@ class _DashboardPageState extends State<DashboardPage> {
                               children: <Widget>[
                                 Expanded(
                                   child: PageView.builder(
-                                     onPageChanged: (int index) {
-                                      _currentPageNotifier.value = index;
-                                    },
-                                     controller: PageController(viewportFraction: 0.9),
-                                    itemCount: 2,
-                                    physics: ClampingScrollPhysics(),
-                                  //  controller: _controller,
-                                    scrollDirection: Axis.horizontal,
+                                      onPageChanged: (int index) {
+                                        _currentPageNotifier.value = index;
+                                      },
+                                      controller: PageController(
+                                          viewportFraction: 0.85),
+                                      itemCount: 2,
+                                      physics: ClampingScrollPhysics(),
+                                      //  controller: _controller,
+                                      scrollDirection: Axis.horizontal,
+                                      itemBuilder: (context, i) {
+                                        return SpecialistTile(
+                                          imgAssetPath:
+                                              specialities[i].imgAssetPath,
+                                          speciality:
+                                              specialities[i].speciality,
+                                          noOfDoctors:
+                                              specialities[i].noOfDoctors,
+                                          backColor:
+                                              specialities[i].backgroundColor,
+                                        );
+                                        //     }),
+                                      }
 
-
-                                    itemBuilder: (context, i) {
-
-
-                                            return SpecialistTile(
-                                              imgAssetPath: specialities[i]
-                                                  .imgAssetPath,
-                                              speciality: specialities[i]
-                                                  .speciality,
-                                              noOfDoctors: specialities[i]
-                                                  .noOfDoctors,
-                                              backColor: specialities[i]
-                                                  .backgroundColor,
-                                            );
-                                      //     }),
-
-
-
-
-
-                                    }
-
-
-
-
-
-
-                                 //   children: <Widget>[
-
-
-
-
-
+                                      //   children: <Widget>[
 
                                       // ListView.builder(
                                       //     itemCount: specialities.length,
@@ -181,12 +170,11 @@ class _DashboardPageState extends State<DashboardPage> {
                                       //             .backgroundColor,
                                       //       );
                                       //     }),
-                                    //],
+                                      //],
 
-                                    // children: items,
-                                    // controller: _controller,
-                                  ),
-                                  
+                                      // children: items,
+                                      // controller: _controller,
+                                      ),
                                 ),
                                 CirclePageIndicator(
                                   selectedDotColor: Colors.blue,
@@ -196,7 +184,6 @@ class _DashboardPageState extends State<DashboardPage> {
                               ],
                             ),
                           ),
-                          
                         ),
                         new Container(
                             margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -215,11 +202,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                         children: <Widget>[
                                           new Column(
                                             children: <Widget>[
-                                             
                                               new Row(
-                                                
                                                 children: <Widget>[
-                                                  
                                                   Image.asset(
                                                       'assets/images/down-arrow.png',
                                                       height: 20,
@@ -258,21 +242,21 @@ class _DashboardPageState extends State<DashboardPage> {
                                           ),
                                           new Column(children: <Widget>[
                                             new Row(
-                                                children: <Widget>[
-                                                  Image.asset(
-                                                      'assets/images/up-arrow.png',
-                                                      height: 20,
-                                                      width: 20),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  Text(
-                                                    "Total Expense",
-                                                    style: TextStyle(
-                                                        color: Colors.blue),
-                                                  ),
-                                                ],
-                                              ),
+                                              children: <Widget>[
+                                                Image.asset(
+                                                    'assets/images/up-arrow.png',
+                                                    height: 20,
+                                                    width: 20),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text(
+                                                  "Total Expense",
+                                                  style: TextStyle(
+                                                      color: Colors.blue),
+                                                ),
+                                              ],
+                                            ),
                                             SizedBox(height: 10),
                                             Text(
                                               "\$ ${246.toString()}",
@@ -449,8 +433,9 @@ class _DashboardPageState extends State<DashboardPage> {
                                       margin:
                                           EdgeInsets.fromLTRB(20, 0, 20, 20),
                                       child: MaterialButton(
-                                        onPressed:
-                                            () {}, //since this is only a UI app
+                                        onPressed: () {
+                                          widget.function();
+                                        }, //since this is only a UI app
                                         child: Text(
                                           'See Transactions',
                                           style: TextStyle(
@@ -826,7 +811,7 @@ class SpecialistTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       //width: 280,
-    
+
       decoration: BoxDecoration(
         image: new DecorationImage(
           image: new ExactAssetImage(imgAssetPath),

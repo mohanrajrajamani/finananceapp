@@ -23,7 +23,7 @@ class MobileNumberVerificationState extends State {
         ),
         body: new Container(
             color: Colors.white,
-            child: Center(
+            
               child: SingleChildScrollView(
                 child: Column(
                   //  mainAxisSize:MainAxisSize.min, // <-- notice 'min' here. Important
@@ -62,7 +62,7 @@ class MobileNumberVerificationState extends State {
                               TextStyle(fontSize: 17, fontFamily: 'Proxima')),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 10,
                     ),
                     new Container(
                       margin: EdgeInsets.fromLTRB(30, 0, 20, 20),
@@ -131,6 +131,6 @@ class MobileNumberVerificationState extends State {
                   ],
                 ),
               ),
-            )));
+            ));
   }
 }

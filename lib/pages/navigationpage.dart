@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_sample_project/pages/accountpage.dart';
+import 'package:my_sample_project/pages/budgetaccountspage.dart';
 import 'package:my_sample_project/pages/dashboardpage.dart';
+
 
 
 class NavigationPage extends StatefulWidget {
@@ -10,6 +12,9 @@ class NavigationPage extends StatefulWidget {
 }
 
 class NavigationPageState extends State {
+
+  final GlobalKey<State> _key = GlobalKey();
+  
   int _selectedTabIndex = 0;
   List _pages = [
     Text("Home"),
@@ -33,7 +38,10 @@ class NavigationPageState extends State {
             offstage: _selectedTabIndex != 0,
             child: new TickerMode(
               enabled: _selectedTabIndex == 0,
-              child: new MaterialApp(home: new DashboardPage()),
+              child: new MaterialApp(home: new DashboardPage(
+                  key: _key,
+                function: methodInParent,
+              )),
             ),
           ),
           new Offstage(
@@ -41,6 +49,13 @@ class NavigationPageState extends State {
             child: new TickerMode(
               enabled: _selectedTabIndex == 1,
               child: new MaterialApp(home: new Accountpage()),
+            ),
+          ),
+           new Offstage(
+            offstage: _selectedTabIndex != 2,
+            child: new TickerMode(
+              enabled: _selectedTabIndex == 2,
+              child: new MaterialApp(home: new BudgetAccountpage()),
             ),
           ),
         ],
@@ -103,4 +118,8 @@ class NavigationPageState extends State {
       ),
     );
   }
+
+   methodInParent() => _changeIndex(1);
+  
 }
+

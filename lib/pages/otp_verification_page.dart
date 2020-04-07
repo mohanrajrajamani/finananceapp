@@ -29,7 +29,7 @@ class OtpverificationPageState extends State {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 Container(
                   margin: EdgeInsets.fromLTRB(40, 40, 40, 0),
@@ -47,7 +47,7 @@ class OtpverificationPageState extends State {
                 Padding(
                   padding: EdgeInsets.fromLTRB(40, 0, 40, 20),
                   child: new Text(
-                      "Enter the OTP send to your\nmobile Number xxxx898590",
+                      "Enter the OTP send to your\nmobile Number XXXXX898590",
                       textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 17, fontFamily: 'Proxima')),
                 ),
@@ -62,6 +62,9 @@ class OtpverificationPageState extends State {
                         margin: EdgeInsets.fromLTRB(30,0,30,20),
                         child: PinCodeTextField(
                         length: 4,
+                        activeColor: Colors.grey,
+                        selectedColor: Colors.grey,
+                        selectedFillColor: Colors.grey,
                         obsecureText: false,
                         animationType: AnimationType.fade,
                         shape: PinCodeFieldShape.underline,
