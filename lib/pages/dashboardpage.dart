@@ -30,7 +30,7 @@ class _DashboardPageState extends State<DashboardPage> {
     buildPage("7", Colors.brown)
   ];
   List<String> categories = ["Adults", "Childrens", "Womens", "Mens"];
-  //PageController _controller = PageController(viewportFraction: 0.8);
+
   List<SpecialityModel> specialities;
 
   var dropdownValue = 'test';
@@ -527,8 +527,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                               CircularPercentIndicator(
                                                 radius: 50.0,
                                                 lineWidth: 2.0,
-                                                percent: 1.0,
-                                                center: new Text("100%"),
+                                                percent: 0.5,
+                                                center: new Text("80%"),
                                                 progressColor: Colors.green,
                                               ),
                                             ],
@@ -538,78 +538,78 @@ class _DashboardPageState extends State<DashboardPage> {
                                     ],
                                   )),
                             )),
-                        new Container(
-                            margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
-                            width: double.infinity,
-                            child: new Card(
-                                elevation: 10.0,
-                                color: Colors.lightGreen,
-                                child: Padding(
-                                    padding:
-                                        EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
-                                      children: <Widget>[
-                                        new Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              'Total Budget',
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontFamily: 'Proxima',
-                                              ),
-                                            ),
-                                            Text(
-                                              "\$ ${25.toString()}",
-                                              style: TextStyle(
-                                                fontSize: 22,
-                                                color: Colors.black,
-                                                fontFamily: 'Proxima',
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 1,
-                                          width: double.infinity,
-                                          child: new Container(
-                                            margin: EdgeInsets.fromLTRB(
-                                                10, 10, 10, 0),
-                                            color: Colors.black38,
-                                          ),
-                                        ),
-                                        new Container(
-                                            child: new Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              '14 March 2020',
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontFamily: 'Proxima',
-                                              ),
-                                            ),
-                                            Text(
-                                              "Credit Card",
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontFamily: 'Proxima',
-                                              ),
-                                            ),
-                                          ],
-                                        )),
-                                      ],
-                                    )))),
+                        // new Container(
+                        //     margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                        //     width: double.infinity,
+                        //     child: new Card(
+                        //         elevation: 10.0,
+                        //         color: Colors.lightGreen,
+                        //         child: Padding(
+                        //             padding:
+                        //                 EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        //             child: Column(
+                        //               mainAxisAlignment:
+                        //                   MainAxisAlignment.spaceBetween,
+                        //               crossAxisAlignment:
+                        //                   CrossAxisAlignment.stretch,
+                        //               children: <Widget>[
+                        //                 new Row(
+                        //                   mainAxisAlignment:
+                        //                       MainAxisAlignment.spaceBetween,
+                        //                   crossAxisAlignment:
+                        //                       CrossAxisAlignment.start,
+                        //                   children: <Widget>[
+                        //                     Text(
+                        //                       'Total Budget',
+                        //                       style: TextStyle(
+                        //                         fontSize: 14,
+                        //                         fontFamily: 'Proxima',
+                        //                       ),
+                        //                     ),
+                        //                     Text(
+                        //                       "\$ ${25.toString()}",
+                        //                       style: TextStyle(
+                        //                         fontSize: 22,
+                        //                         color: Colors.black,
+                        //                         fontFamily: 'Proxima',
+                        //                       ),
+                        //                     ),
+                        //                   ],
+                        //                 ),
+                        //                 SizedBox(
+                        //                   height: 1,
+                        //                   width: double.infinity,
+                        //                   child: new Container(
+                        //                     margin: EdgeInsets.fromLTRB(
+                        //                         10, 10, 10, 0),
+                        //                     color: Colors.black38,
+                        //                   ),
+                        //                 ),
+                        //                 new Container(
+                        //                     child: new Row(
+                        //                   mainAxisAlignment:
+                        //                       MainAxisAlignment.spaceBetween,
+                        //                   crossAxisAlignment:
+                        //                       CrossAxisAlignment.start,
+                        //                   children: <Widget>[
+                        //                     Text(
+                        //                       '14 March 2020',
+                        //                       style: TextStyle(
+                        //                         fontSize: 14,
+                        //                         fontFamily: 'Proxima',
+                        //                       ),
+                        //                     ),
+                        //                     Text(
+                        //                       "Credit Card",
+                        //                       style: TextStyle(
+                        //                         fontSize: 14,
+                        //                         fontFamily: 'Proxima',
+                        //                       ),
+                        //                     ),
+                        //                   ],
+                        //                 )),
+                        //               ],
+                        //             )))),
                         new Container(
                             margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
                             width: double.infinity,

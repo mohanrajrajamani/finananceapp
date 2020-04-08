@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_sample_project/pages/accountpage.dart';
 import 'package:my_sample_project/pages/budgetaccountspage.dart';
 import 'package:my_sample_project/pages/dashboardpage.dart';
+import 'package:my_sample_project/pages/reportpage.dart';
 
 
 
@@ -16,12 +17,7 @@ class NavigationPageState extends State {
   final GlobalKey<State> _key = GlobalKey();
   
   int _selectedTabIndex = 0;
-  List _pages = [
-    Text("Home"),
-    Text("Search"),
-    Text("Cart"),
-    Text("Account"),
-  ];
+  
 
   _changeIndex(int index) {
     setState(() {
@@ -56,6 +52,13 @@ class NavigationPageState extends State {
             child: new TickerMode(
               enabled: _selectedTabIndex == 2,
               child: new MaterialApp(home: new BudgetAccountpage()),
+            ),
+          ),
+           new Offstage(
+            offstage: _selectedTabIndex !=3,
+            child: new TickerMode(
+              enabled: _selectedTabIndex == 3,
+              child: new MaterialApp(home: new ReportPage()),
             ),
           ),
         ],
