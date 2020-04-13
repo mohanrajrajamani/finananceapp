@@ -91,7 +91,8 @@ class IncomeExpensePageState extends State {
                                     fontFamily: 'Proximabold')),
 
                             TextField(
-                              enableInteractiveSelection: false,
+                              readOnly: true,
+                             // enableInteractiveSelection: false,
                               focusNode: FocusNode(),
                               onTap: (){
                                 _displayDialog(context);

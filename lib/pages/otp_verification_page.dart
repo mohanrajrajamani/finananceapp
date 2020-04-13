@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_sample_project/pages/bottomnavigationpage.dart';
 import 'package:my_sample_project/pages/navigationpage.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 

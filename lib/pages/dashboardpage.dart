@@ -362,8 +362,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                         DropdownMenuItem<String>(
                                           child: Row(
                                             children: <Widget>[
-                                              Icon(Icons.filter_1),
-                                              Text('Item 1'),
+                                              Text('Last Month',style: TextStyle(fontSize: 16.00)),
                                             ],
                                           ),
                                           value: 'one',
@@ -371,8 +370,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                         DropdownMenuItem<String>(
                                           child: Row(
                                             children: <Widget>[
-                                              Icon(Icons.filter_2),
-                                              Text('Item 2'),
+                                              Text('Last 3 Month',style: TextStyle(fontSize: 16.00))
                                             ],
                                           ),
                                           value: 'two',
@@ -380,8 +378,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                         DropdownMenuItem<String>(
                                           child: Row(
                                             children: <Widget>[
-                                              Icon(Icons.filter_3),
-                                              Text('Item 3'),
+                                              Text('Last 6 Month',style: TextStyle(fontSize: 16.00)),
                                             ],
                                           ),
                                           value: 'three',
